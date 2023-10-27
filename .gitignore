@@ -1,0 +1,4 @@
+src/LoireSully_model/user_fortran
+src/LoireSully_model/BC_Loire_V2n1.cli
+src/LoireSully_model/courbe_tarage_NEW.txt
+src/LoireSully_model/*.slf
