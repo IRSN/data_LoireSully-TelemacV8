@@ -1,0 +1,79 @@
+---
+title: "Display Loire-Sully model"
+author: "Y. Richet"
+date: "2023"
+---
+
+The 'Loire' model:
+
+```{r fig.width=6, fig.height=5}
+Geo_Loire_V6 = telemac::read_geo("LoireSully_model/Geo_Loire_V6.slf")
+
+col.fun = colorRamp(c("blue", "green", "red"))
+col.val = ( (Geo_Loire_V6$elevation-quantile(Geo_Loire_V6$elevation,0.001)) / (max(Geo_Loire_V6$elevation)-min(Geo_Loire_V6$elevation)) )
+cols = col.fun(col.val)/255
+cols[is.na(cols)] = 0
+
+plot(Geo_Loire_V6$x, Geo_Loire_V6$y, 
+     col = rgb(cols[,1],cols[,2],cols[,3],0.1),pch='.')
+```
+
+That we just modify:
+
+* to add input variables: $ks2, ks3, ks4$ using "*.f":
+
+```{r echo=F}
+calage_TVF_1 = readChar("LoireSully_model/user_fortran/calage_TVF_1.f", file.info("LoireSully_model/user_fortran/calage_TVF_1.f")$size)
+calage_TVF_1 = strsplit(calage_TVF_1,"\n",fixed=T)[[1]]
+cat(paste0(collapse="\n",calage_TVF_1[383:439]))
+```
+
+* to get reference point water height in "*.poi": 
+
+```{r echo=F}
+p_txt=readChar("LoireSully_model/Sully.poi", file.info("LoireSully_model/Sully.poi")$size); 
+cat(p_txt)
+```
+
+
+```{r fig.width=6, fig.height=5}
+png("LoireSully_model.png")
+
+plot(Geo_Loire_V6$x, Geo_Loire_V6$y, 
+     col = rgb(cols[,1],cols[,2],cols[,3],0.1),pch='.',
+     xlim=c(650000,660000),ylim=c(6735000,6745000))
+
+p = list()
+for (pi_txt in strsplit(p_txt,"\n",fixed=T)[[1]]) {
+  # print(pi_txt)
+  if (!(substr(pi_txt,1,1)=="."))
+  try(eval(parse(text=
+               paste0("p$",
+                      gsub("=","=c(",pi_txt,fixed=T),")")
+               )))
+}
+
+for (s in names(p)){
+  points(p[[s]][1],p[[s]][2])
+  text(p[[s]][1]+100,p[[s]][2]+300,labels=s)
+}
+  
+
+XY=list()
+for (i in 151:377) {
+  calage_TVF_1[i]=gsub("\r","",calage_TVF_1[i])
+  # print(calage_TVF_1[i])
+  if (nchar(calage_TVF_1[i])>0)
+  eval(parse(text=
+               paste0("XY$",
+                      gsub(" ","",fixed=T,gsub(")","]",fixed=TRUE, gsub("(","[",fixed = TRUE,x=calage_TVF_1[i]))))
+             ))
+}
+
+for (i in 1:8) {
+  polygon(x=XY[[paste0("XSOM",i)]],y=XY[[paste0("YSOM",i)]],col = NA,border = 'gray')
+  text(mean(XY[[paste0("XSOM",i)]])+100,mean(XY[[paste0("YSOM",i)]])+300,label=paste0("ks",i),col='gray')
+}
+
+dev.off()
+```

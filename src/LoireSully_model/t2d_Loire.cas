@@ -1,0 +1,92 @@
+/DEBUGGER=1
+/-------------------------------------------------------------------/
+/                 TELEMAC-2D   MODELE LOIRE SULLY                   /
+/-------------------------------------------------------------------/
+/
+/----------------------------------------------
+/  COMPUTER INFORMATIONS
+/----------------------------------------------
+FICHIER FORTRAN                    = 'user_fortran'
+FICHIER DE GEOMETRIE               = Geo_Loire_V6.slf
+FICHIER DES CONDITIONS AUX LIMITES = 'BC_Loire_V2n1.cli'
+FICHIER DES RESULTATS              = r2d_Loire.res
+FICHIER DU CALCUL PRECEDENT        = Loire_Hotstart.slf
+/
+/----------------------------------------------
+/  BRECHES
+/----------------------------------------------
+FICHIER DE DONNEES DES BRECHES = 'breach.txt'
+BRECHE = OUI
+/
+/
+/----------------------------------------------
+/  GENERAL INFORMATIONS - OUTPUTS
+/----------------------------------------------
+VARIABLES POUR LES SORTIES GRAPHIQUES = 'H,S,B'   
+PERIODE POUR LES SORTIES GRAPHIQUES   = 1800
+PERIODE DE SORTIE LISTING             = 1800
+DUREE DU CALCUL			      = @{$(tm)+86400}
+PAS DE TEMPS                          = 10.0
+BILAN DE MASSE                        = OUI
+INFORMATIONS SUR LE SOLVEUR           = OUI
+HEURE DE L'ORIGINE DES TEMPS          = 12;00;00
+DATE DE L'ORIGINE DES TEMPS           = 2003;12;02
+/
+/----------------------------------------------
+/  INITIAL CONDITIONS
+/----------------------------------------------
+SUITE DE CALCUL             = OUI
+REMISE A ZERO DU TEMPS      = OUI
+/
+/----------------------------------------------
+/  BOUNDARY & INITIAL CONDITIONS
+/----------------------------------------------
+CONDITIONS INITIALES = 'HAUTEUR CONSTANTE'
+HAUTEUR INITIALE = 0.001
+
+/CONDITIONS INITIALES = 'COTE CONSTANTE'
+/COTE INITIALE = 97.01
+
+DEBITS IMPOSES = 425 ; 0
+FICHIER DES FRONTIERES LIQUIDES = hydro.txt
+
+/PROFILS DE VITESSE= 0 ; 0
+FICHIER DES COURBES DE TARAGE   = courbe_tarage_NEW.txt
+COURBES DE TARAGE               = 0 ; 1
+
+
+/Test 1 : Hi= 1m
+/
+/----------------------------------------------
+/  PHYSICAL PARAMETERS
+/----------------------------------------------
+MODELE DE TURBULENCE                         = 1
+COEFFICIENT DE DIFFUSION DES VITESSES        = 0.1
+LOI DE FROTTEMENT SUR LE FOND                = 3
+COEFFICIENT DE FROTTEMENT                    = 20.
+/
+/----------------------------------------------
+/  NUMERICAL PARAMETERS 
+/----------------------------------------------
+BANCS DECOUVRANTS                            = OUI
+OPTION DE TRAITEMENT DES BANCS DECOUVRANTS   = 1
+TRAITEMENT DES HAUTEURS NEGATIVES            = 2                 
+FORME DE LA CONVECTION                       = 13;5
+DISCRETISATIONS EN ESPACE                    = 11;11
+OPTION DE SUPG                               = 0;0
+COMPATIBILITE DU GRADIENT DE SURFACE LIBRE   = 0.
+PRECISION DU SOLVEUR                         = 1.E-4 
+SOLVEUR                                      = 1
+TRAITEMENT DU SYSTEME LINEAIRE               = 2
+OPTION DU SOLVEUR                            = 3
+IMPLICITATION POUR LA HAUTEUR                = 1.
+IMPLICITATION POUR LA VITESSE                = 1. 
+CORRECTION DE CONTINUITE                     = OUI
+MASS-LUMPING SUR H                           = 1.
+/
+/----------------------------------------------
+/  SIPHONS
+/----------------------------------------------
+/NOMBRE DE SIPHONS = 0
+/             
+&FIN

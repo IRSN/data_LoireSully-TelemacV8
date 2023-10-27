@@ -1,0 +1,184 @@
+# Nombre de Breches
+9
+# BRECHE 1 (amont)
+# Largeur d'emprise du polygone de definition de la breche
+23.0
+# Option pour la gestion de l'ouverture 
+3
+# Duree d'ouverture de la breche (0.0 = ouverture instantanee)
+0.0
+# option for erosion type (1=bottom lowering, 2=widening)
+1
+# Cote finale de la breche
+@{122.64-$(er)*(122.64-115)}
+# Numero (maillage global) du point de controle de la breche
+129415
+# Cote de controle de la breche (= cote max digue)
+@{122.64+$(of)}
+# Nombre de points decrivant la polyligne
+2
+# Description de la polyligne
+659933.  6739528.
+659777.  6739650.
+# BRECHE 2 
+# Largeur d'emprise du polygone de definition de la breche
+23.0
+# Option pour la gestion de l'ouverture
+3
+# Duree d'ouverture de la breche (0.0 = ouverture instantanee)
+0.0
+# option for erosion type
+1
+# Cote finale de la breche
+@{122.40-$(er)*(122.40-115)}
+# Numero (maillage global) du point de controle de la breche
+129236
+# Cote de controle de la breche (= cote max digue)
+@{122.40+$(of)}
+# Nombre de points decrivant la polyligne
+2
+# Description de la polyligne
+659770.  6739657.
+659601.  6739766.
+# BRECHE 3
+# Largeur d'emprise du polygone de definition de la breche
+23.0
+# Option pour la gestion de l'ouverture
+3
+# Duree d'ouverture de la breche (0.0 = ouverture instantanee)
+0.0
+# option for erosion type
+1
+# Cote finale de la breche
+@{120.42-$(er)*(120.42-114.7)}
+# Numero (maillage global) du point de controle de la breche
+125980
+# Cote de controle de la breche (= cote max digue)
+@{120.42+$(of)}
+# Nombre de points decrivant la polyligne
+2
+# Description de la polyligne
+656295.  6740832.
+656096.  6740853.
+# BRECHE 4
+# Largeur d'emprise du polygone de definition de la breche
+23.
+# Option pour la gestion de l'ouverture
+3
+# Duree d'ouverture de la breche (0.0 = ouverture instantanee)
+0.0
+# option for erosion type
+1
+# Cote finale de la breche
+@{119.32-$(er)*(119.32-110)}
+# Numero (maillage global) du point de controle de la breche
+124321
+# Cote de controle de la breche (= cote max digue)
+@{119.32+$(of)}
+# Nombre de points decrivant la polyligne
+3
+# Description de la polyligne
+654577.  6741387.
+654483.  6741423.
+654384.  6741438.
+# BRECHE 5
+# Largeur d'emprise du polygone de definition de la breche
+23.0
+# Option pour la gestion de l'ouverture
+3
+# Duree d'ouverture de la breche (0.0 = ouverture instantanee)
+0.0
+# option for erosion type
+1
+# Cote finale de la breche
+@{119.55+$(er)*(119.55-112)}
+# Numero (maillage global) du point de controle de la breche
+124123
+# Cote de controle de la breche(= cote max digue)
+@{119.55+$(of)}
+# Nombre de points decrivant la polyligne
+2
+# Description de la polyligne
+654391.  6741439.
+654191.  6741439.
+# BRECHE 6
+# Largeur d'emprise du polygone de d?finition de la breche
+23.
+# Option pour la gestion de l'ouverture
+3
+# Duree d'ouverture de la breche (0.0 = ouverture instantanee)
+0.0
+# option for erosion type
+1
+# Cote finale de la breche
+@{118.88-$(er)*(118.88-113.5)}
+# Numero (maillage global) du point de controle de la breche
+123321
+# Cote de controle de la breche(= cote max digue)
+@{118.88+$(of)}
+# Nombre de points decrivant la polyligne
+3
+# Description de la polyligne
+653907.  6741413.
+653810.  6741389.
+653722.  6741340.
+# BRECHE 7
+# Largeur d'emprise du polygone de definition de la breche
+23.0
+# Option pour la gestion de l'ouverture
+3
+# Duree d'ouverture de la breche (0.0 = ouverture instantanee)
+0.0
+# option for erosion type
+1
+# Cote finale de la breche
+@{119.02-$(er)*(119.02-114)}
+# Numero (maillage global) du point de controle de la breche
+122518
+# Cote de controle de la breche(= cote max digue)
+@{119.02+$(of)}
+# Nombre de points decrivant la polyligne
+2
+# Description de la polyligne
+653377.  6741174.
+653200.  6741082.
+# BRECHE 8
+# Largeur d'emprise du polygone de d?finition de la breche
+23.0
+# Option pour la gestion de l'ouverture 
+3
+# Duree d'ouverture de la breche (0.0 = ouverture instantanee)
+0.0
+# option for erosion type
+1
+# Cote finale de la breche
+@{120.3-$(er)*(120.3-111.5)}
+# Numero (maillage global) du point de controle de la breche
+122038
+# Cote de controle de la breche
+@{120.3+$(of)}
+# Nombre de points decrivant la polyligne
+2
+# Description de la polyligne
+652916.  6740973.
+652726.  6740911.
+# BRECHE 9
+# Largeur d'emprise du polygone de d?finition de la breche
+23.0
+# Option pour la gestion de l'ouverture 
+3
+# Duree d'ouverture de la breche (0.0 = ouverture instantanee)
+0.0
+# option for erosion type
+1
+# Cote finale de la breche
+@{117.44-$(er)*(117.44-111)}
+# Numero (maillage global) du point de controle de la breche
+121854
+# Cote de controle de la breche
+@{117.44+$(of)}
+# Nombre de points decrivant la polyligne
+2
+# Description de la polyligne
+652712.  6740906.
+652520.  6740850.
